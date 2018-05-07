@@ -8,9 +8,9 @@ void rotateMatrix(int mat[][N])
 {
 	// Simply print from last cell to first cell.
 	for (int i = N - 1; i >= 0; i--) {
-		for (int j = N - 1; j >= 0; j--) 
+		for (int j = N - 1; j >= 0; j--){
 			printf("%d ", mat[i][j]);
-		
+		}
 		printf("\n");
 	}
 }

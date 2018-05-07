@@ -1,3 +1,17 @@
+/*
+sol: http://zxi.mytechroad.com/blog/leetcode/leetcode-79-word-search/
+lc: https://leetcode.com/problems/word-search/description/
+给一个2D棋盘，格子中有字母，搜索相邻棋盘中是否有目标字符串
+输入：
+board=[
+  ['A','B','C','E'],
+  ['S','F','C','S'],
+  ['A','D','E','E']
+]
+word="ABCCED"
+输出：true
+思路：depth first search
+*/
 class Solution {
 public:
     bool exist(vector<vector<char>> &board, string word) {
@@ -32,17 +46,3 @@ private:
     int w;
     int h;
 };
-/*
-sol: http://zxi.mytechroad.com/blog/leetcode/leetcode-79-word-search/
-lc: https://leetcode.com/problems/word-search/description/
-给一个2D棋盘，格子中有字母，搜索相邻棋盘中是否有目标字符串
-输入：
-board=[
-  ['A','B','C','E'],
-  ['S','F','C','S'],
-  ['A','D','E','E']
-]
-word="ABCCED"
-输出：true
-思路：depth first search
-*/

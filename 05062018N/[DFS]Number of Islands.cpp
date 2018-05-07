@@ -1,3 +1,15 @@
+/*
+lc: https://leetcode.com/problems/number-of-islands/description/
+sol: http://zxi.mytechroad.com/blog/searching/leetcode-200-number-of-islands/
+Input:
+11110
+11010
+11000
+00000
+
+Output: 1
+
+*/
 class Solution {
 public:
     int numIslands(vector<vector<char>>& grid) {
@@ -29,8 +41,3 @@ private:
         dfs(grid, i, j-1, m, n);
     }
 };
-
-/*
-lc: https://leetcode.com/problems/number-of-islands/description/
-sol: http://zxi.mytechroad.com/blog/searching/leetcode-200-number-of-islands/
-*/

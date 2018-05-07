@@ -1,3 +1,14 @@
+/*
+Implement atoi which converts a string to an integer.
+
+Input: "4193 with words"
+Output: 4193
+
+Input: "words and 987"
+Output: 0
+
+https://leetcode.com/problems/string-to-integer-atoi/description/
+*/
 class Solution {
 public:
     int myAtoi(string str) {

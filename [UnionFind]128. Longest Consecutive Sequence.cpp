@@ -14,5 +14,5 @@ public:
         return res;
     }
 };
-https://leetcode.com/problems/longest-consecutive-sequence/description/
-http://www.cnblogs.com/grandyang/p/4276225.html
+// https://leetcode.com/problems/longest-consecutive-sequence/description/
+// http://www.cnblogs.com/grandyang/p/4276225.html

@@ -1,3 +1,22 @@
+/*
+You are given an n x n 2D matrix representing an image.
+You have to rotate the image in-place
+Given input matrix = 
+[
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+],
+
+rotate the input matrix in-place such that it becomes:
+[
+  [7,4,1],
+  [8,5,2],
+  [9,6,3]
+]
+
+https://leetcode.com/problems/rotate-image/description/
+*/
 #include<bits/stdc++.h>
 using namespace std;
 

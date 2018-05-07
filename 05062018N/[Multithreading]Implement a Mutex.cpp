@@ -1,19 +1,17 @@
 //---------------->Mutex.h
 class Mutex
 {
-    public:
+public:
         Mutex();
         ~Mutex();
-
         void        lock();
         void        unlock();
         boolean     isLocked();
 
-
-    protected:
+protected:
         uint8_t     _interlockedExchange(uint8_t v);
 
-    private:
+private:
         uint8_t     m_count;
 };
 

@@ -1,3 +1,12 @@
+/*
+Given a binary tree, determine if it is height-balanced.
+https://leetcode.com/problems/balanced-binary-tree/description/
+ 	3
+   / \
+  9  20
+    /  \
+   15   7
+*/
 #include<iostream>
 using namespace std;
 
