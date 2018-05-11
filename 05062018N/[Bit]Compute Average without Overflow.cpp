@@ -20,3 +20,8 @@ int main(){
 	cout<<"Computed Average: "<<computeAverage(a, b); 
 	return 0;
 }
+/*
+2. 给了一个foo的class， 然后有一个pointer指向这个class的一个object，如果这个pointer的值是a，问foo+5的值是什么。
+答案是a+5*sizeof（foo）。
+3. 力扣 sort colors，要求必须O(n)时间复杂度并且只能过一遍。
+*/
