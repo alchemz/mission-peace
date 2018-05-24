@@ -1,5 +1,6 @@
 /*
 https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+http://bangbingsyb.blogspot.com/2014/11/leetcode-longest-substring-without.html
 */
 class Solution {
 public:
