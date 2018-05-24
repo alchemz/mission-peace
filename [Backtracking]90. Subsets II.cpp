@@ -1,42 +1,39 @@
 /*
-https://leetcode.com/problems/subsets-ii/description/
- //======>注意跳过相同的数字，少一个branch
-            if(i!=pos && nums[i]==nums[i-1])   continue;
-*/
-/*
-Input: [1,2,2]
-Output:
-[
-  [2],
-  [1],
-  [1,2,2],
-  [2,2],
-  [1,2],
-  []
-]
-https://leetcode.com/problems/subsets-ii/description/
-用二叉树表达call stack会比较清晰
+注意：如果有重复的node, 一定要sort, 这样才能检测到
+在for loop中，用if(i>idx && nums[i]==nums[i-1]) continue, 跳过重复的深度搜索
+backtracking:
+
+                        []        
+                   /          \        
+                  /            \     
+                 /              \
+              [1]                []
+           /       \           /    \
+          /         \         /      \        
+       [1 2]       [1]       [2]     []
+      /     \     /   \     /   \    / \
+  [1 2 2] [1 2]  X   [1]  [2 2] [2] X  []
 */
 class Solution {
 public:
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
-        if(nums.empty())    return {};
         vector<vector<int>> res;
-        vector<int> out;
-        //======>主语sort nums
-        sort(nums.begin(), nums.end());//{1,2,1}
-        subsetsWithDupHelper(nums, 0, out, res);
+        vector<int> tmp;
+        sort(nums.begin(), nums.end());
+        subsetsWithDupHelper(nums, 0, tmp, res);
         return res;
     }
     
-    void subsetsWithDupHelper(vector<int> &nums, int pos, vector<int> &out, vector<vector<int>> &res){
-        res.push_back(out);
-        for(int i=pos; i<(int)nums.size(); i++){
-            //======>注意跳过相同的数字，少一个branch
-            if(i!=pos && nums[i]==nums[i-1])   continue;
-            out.push_back(nums[i]);
-            subsetsWithDupHelper(nums, i+1, out, res);
-            out.pop_back();
+    void subsetsWithDupHelper(vector<int>&nums, int idx, vector<int>&tmp,
+                             vector<vector<int>>&res){
+        res.push_back(tmp);
+        for(size_t i=idx; i<nums.size(); i++){
+            if(i>idx && nums[i]==nums[i-1]) continue;
+            tmp.push_back(nums[i]);
+            subsetsWithDupHelper(nums, i+1, tmp, res);
+            tmp.pop_back();
         }
     }
 };
+
+//https://leetcode.com/problems/subsets-ii/description/

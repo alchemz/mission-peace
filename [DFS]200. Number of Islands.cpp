@@ -1,10 +1,7 @@
 class Solution {
 public:
     int numIslands(vector<vector<char>>& grid) {
-        //1. corner case
         if(grid.empty()) return 0;
-        
-        //2. count numlands with dfs
         int m=grid.size();
         int n=grid[0].size();
         int ans=0;
@@ -18,7 +15,6 @@ public:
     }
 
 private:
-    //check neighbours
     void dfs(vector<vector<char>>& grid, int i, int j, int m, int n){
         if(i<0||j<0||i>=m||j>=n||grid[i][j]=='0')
             return;
@@ -29,8 +25,3 @@ private:
         dfs(grid, i, j-1, m, n);
     }
 };
-
-/*
-lc: https://leetcode.com/problems/number-of-islands/description/
-sol: http://zxi.mytechroad.com/blog/searching/leetcode-200-number-of-islands/
-*/
