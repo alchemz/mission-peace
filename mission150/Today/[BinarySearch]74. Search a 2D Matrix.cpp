@@ -1,6 +1,11 @@
 /*
 Write an efficient algorithm that searches for a value in an m x n matrix. 
 找target是否在matrix中
+
+time: O(logn)
+space: O(1)
+logic: binary search, 相当于一个sorted list.
+从中间开始搜索，每次搜索范围减半。
 */
 class Solution {
 public:

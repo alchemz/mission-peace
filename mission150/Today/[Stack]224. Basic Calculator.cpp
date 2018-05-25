@@ -1,3 +1,9 @@
+/*
+所以我们要用循环把之后的数字都读进来，然后用sign*num来更新结果res；
+如果遇到了加号，则sign赋为1，如果遇到了符号，则赋为-1；
+如果遇到了左括号，则把当前结果res和符号sign压入栈，res重置为0，sign重置为1；
+如果遇到了右括号，结果res乘以栈顶的符号，栈顶元素出栈，结果res加上栈顶的数字，栈顶元素出栈。
+*/
 class Solution {
 public:
     int calculate(string s) {

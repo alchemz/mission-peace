@@ -1,3 +1,17 @@
+/*
+Time: O(m+n)
+
+[
+  [1,   4,  7, 11, 15],
+  [2,   5,  8, 12, 19],
+  [3,   6,  9, 16, 22],
+  [10, 13, 14, 17, 24],
+  [18, 21, 23, 26, 30]
+]
+观察matrix得到, 18这个数在左下角，往上所有数变小，往右所有数增加。
+同理右上角15这个数，往左边所有数减小，往下所有数增加。
+*/
+
 bool searchMatrix(vector<vector<int>>& matrix, int target) {
     int m = matrix.size();
     if (m == 0) return false;

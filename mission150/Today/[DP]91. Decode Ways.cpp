@@ -1,4 +1,12 @@
 /*
+'A' -> 1
+'B' -> 2
+...
+'Z' -> 26
+Input: "12"
+Output: 2
+Explanation: It could be decoded as "AB" (1 2) or "L" (12).
+
 与climbing stairs类似。
 不同于一些限制，a.一位数不能为0, b. 两位数不能大于26, c其十位数上也不能为0
 
@@ -25,3 +33,60 @@ public:
         return dp.back();
     }
 };
+class Solution {
+public:
+    int numDecodings(string s) {
+        if(s.length() == 0) return 0;        
+        m_ways[""] = 1;        
+        return ways(s);
+    }
+ 
+private:
+    int ways(const string& s) {
+        if (m_ways.count(s)) return m_ways[s];
+        if (s[0] == '0') return 0;
+        if (s.length() == 1) return 1;        
+        
+        int w = ways(s.substr(1));        
+        const int prefix = stoi(s.substr(0, 2));
+        
+        if (prefix <= 26)
+             w += ways(s.substr(2));        
+        
+        m_ways[s] = w;        
+        return w;
+    }
+ 
+    unordered_map<string, int> m_ways;
+};
+//O(n^2),
+//O(n^2)
+class Solution {
+public:
+    int numDecodings(string s) {
+        if(s.length() == 0) return 0;
+        return ways(s, 0, s.length() - 1);
+    }
+ 
+private:    
+    int ways(const string& s, int l, int r) {        
+        if (m_ways.count(l)) return m_ways[l];
+        if (s[l] == '0') return 0;
+        if (l >= r) return 1; // Single digit or empty.
+        
+        int w = ways(s, l + 1, r);
+        const int prefix = (s[l] - '0') * 10 + (s[l + 1] - '0');
+        
+        if (prefix <= 26)
+             w += ways(s, l + 2, r);
+        
+        m_ways[l] = w;
+        return w;
+    }
+    
+    // Use l as key.
+    unordered_map<int, int> m_ways;
+};
+
+//time: O(n)
+//space: O(n)
