@@ -1,3 +1,12 @@
+/*
+Given a list of points that form a polygon when joined sequentially, 
+find if this polygon is convex
+凸多边形
+
+而相邻的三个点就是最基本的单位，我们可以算由三个点组成的一小段曲线的法线方向，
+而凸多边形的每个三个相邻点的法向量方向都应该相同，要么同正，要么同负。
+
+*/
 class Solution{
 public:
 	bool isConvex(vector<vector<int>>& points){
