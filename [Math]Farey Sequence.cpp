@@ -32,3 +32,12 @@ int main()
 	farey(n);
 	return 0;
 }
+
+
+/*
+法里数列
+F1 = {0⁄1, 1⁄1}
+F2 = {0⁄1, 1⁄2, 1⁄1}
+F3 = {0⁄1, 1⁄3, 1⁄2, 2⁄3, 1⁄1}
+floor(x) : Returns the largest integer that is smaller than or equal to x (i.e : rounds downs the nearest integer).
+*/
