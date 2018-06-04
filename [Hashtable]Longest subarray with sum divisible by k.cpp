@@ -4,7 +4,13 @@
 
 using namespace std;
 
-
+/*
+mod_arr记录(sum[0,,,i]%k)
+哈希表记录element, 和它第一次出现的
+traverse i to n
+if mod_arr[i]==0, 表示可以整除，更新maxLen=i+1
+如果哈希表中没有，存进(mod_arr[i],i)
+*/
 int longSubarrWthSumDivByK(int arr[], int n, int k)
 {
 	unordered_map<int, int> um;
