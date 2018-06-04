@@ -12,9 +12,16 @@ public:
         
         double res;
         res = myPowPos(x, n/2);
-     
-        if(n % 2 ==0) 
-            return res*res;
-        return res*res*x;
+        res = res*res;
+        
+        if(n % 2 !=NULL)
+            return res*x;
+        return res;
     }
 };
+
+/*
+基本思路，为了防止overflow, res=myPow(x, n/2), 一半*一半, res*res
+如果n是奇数，则再res*x
+
+*/
