@@ -18,3 +18,10 @@ int longestUtil(vector<int> a, vector<int> b){
 
     return T[m][n];
 }
+/*
+Examples:
+LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
+LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4.
+可以时间断的subsequence.
+*/
+//O(mn)
